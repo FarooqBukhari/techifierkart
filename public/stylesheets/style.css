@@ -1,0 +1,439 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+nav{
+    margin-bottom: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.navbar-brand , .nav-link:hover{
+    color: red!important;
+}
+.dropdown-item:hover{
+    background-color: red;
+    color:white;
+}
+.img-thumbnail{
+    margin-bottom: 5px;
+    height: auto;
+    width: auto;
+}
+.img-thumbnail img{
+    max-height: 150px;
+    max-width: 100%;
+}
+.img-thumbnail .description{
+    color: #7f7f7f;
+}
+.price{
+    font-weight: bold;
+    font-size: 20px;
+}
+.rating{
+    color: goldenrod;
+    font-size: 10px;
+}
+a{
+    color: red;
+}
+a:hover{
+    color: maroon;
+}
+.companyName{
+    color:red;
+}
+ul{
+    list-style: none;
+}
+.col-xs-12.col-sm-12.col-md-8.col-lg-8 {
+    margin-top: 10px;
+}
+.footer{
+    position: static;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+    padding-top: 20px;
+    background-color: whitesmoke;
+    box-shadow: 0 -3px 10px 3px rgba(52, 58, 64, 0.2);
+}
+.footer-img{
+    width: 225px;
+    height: 250px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.banner{
+    margin-top: -50.5px;
+    z-index: -1;
+}
+.about-banner{
+    width: 100%;
+}
+.about-us{
+    margin-top: 10px;
+}
+.tagline{
+    color: red;
+    font-size: 18px;
+}
+.team{
+    margin-top: 10px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+.pCardButton {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: red;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.pCardLink {
+    text-decoration: none;
+    font-size: 22px;
+    margin-left: 8px;
+    color: white;
+}
+
+.pCardLink:hover {
+    opacity: 0.7;
+}
+.colorKart{
+    color:red;
+}
+.badge:hover{
+    background-color: red!important;
+}
+.cartLink{
+    color: white;
+}
+.cartBtn{
+    margin-right: 10px;
+}
+.cartBadge{
+    margin-top: 10px;
+}
+.container{
+    min-height: auto;
+    overflow-y: auto;
+}
+.footer-row{
+    box-shadow: 10px 3px 10px 3px rgba(255, 0, 0, 0.452);
+}
+.footer-copy-pos{
+    margin-top: 10px;
+}
+.profile {
+    margin: 20px 0;
+}  
+/* Profile sidebar */
+.profile-sidebar {
+    position: fixed;
+    color: whitesmoke!important;
+    min-height: 100%;
+    max-height: 100%;
+    align-content: center;
+    z-index: 100;
+}
+.profile-userpic img {
+    float: none;
+    margin-left: 38%;
+    width: 25%;
+    height: 25%;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+}
+
+.profile-usertitle {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-usertitle-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}    
+ /* Fixed sidenav, full height */
+ .sidenav {
+    min-height: auto;
+    width: 200px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    color: white;
+  }
+  
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    color: white;
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: red;
+  }
+  
+  /* Main content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  /* Add an active class to the active dropdown button */
+  .active {
+    color: white;
+  }
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    background-color: #7f7f7f;;
+    padding-left: 8px;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  } 
+
+/* Profile Content */
+.profile-content {
+    padding: 20px;
+    background: #fff;
+    min-height: 460px;
+}
+
+.checkoutLink{
+    color: white;
+}
+.custom-control-label::before {
+    background-color: red;
+}
+.custom-control-input:checked~.custom-control-label::before,
+.custom-control-input:checked~.custom-control-label::after {
+    background-color: maroon;
+    background-image: white; 
+    border-radius: 50%;
+}
+.custom-radio .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 123, 255, 0.25); /* pink, 25% opacity */
+}
+
+.btn-xs{
+    margin: 3px;
+}
+.alert{
+    width: 100%;
+}
+
+.product-description , .menu-items-li{
+    margin-right:25px;
+    font-weight:lighter;
+    cursor:pointer;
+}
+li.active{
+    border-bottom:3px solid red;
+    color: gray;
+}
+.item-photo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.menu-items{
+    list-style-type:none;
+    display:inline-flex;
+    margin-bottom:0;
+    margin-top:20px
+}
+.btn-success{
+    width:100%;
+    border-radius:0;
+}
+.section{
+    width:100%;
+    margin-left:-15px;
+    padding:2px;
+    padding-left:15px;
+    padding-right:15px;
+    background:#f8f9f9;
+}
+.title-price{
+    margin-top:30px;
+    margin-bottom:0;
+    color:red;
+}
+.title-attr{
+    margin-top:0;
+    margin-bottom:0;
+    color:black;
+}
+div.section > div {
+    width:100%;
+    display:inline-flex;
+}
+div.section > div > input {
+    margin:0;
+    padding-left:5px;
+    font-size:10px;
+    padding-right:5px;
+    max-width:18%;
+    text-align:center;
+}
+
+@media (max-width: 426px) {
+    .product-container {margin-top:0px !important;}
+    .product-container > .row{padding:0 !important;}
+    .product-container > .row > .col-xs-12.col-sm-5{
+        padding-right:0 ;    
+    }
+    .product-container > .row > .col-xs-12.col-sm-9 > div > p{
+        padding-left:0 !important;
+        padding-right:0 !important;
+    }
+    .product-container > .row > .col-xs-12.col-sm-9 > div > ul{
+        padding-left:10px !important;
+        
+    }            
+    .section{width:104%;}
+    .menu-items{padding-left:0;}
+}
+
+.dropdown-header{
+    color: whitesmoke;
+}
+
+.pReviews{
+    padding: 15px;
+    max-width: 768px;
+    margin: 0 auto;
+}
+  
+.review-item{
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 5px #343a40;
+}
+  
+.review-item .review-date{
+    color: #cecece;
+}
+.review-item .review-text{
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 5px;
+    color: #343a40;
+}
+  
+.review-item .reviewer{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #cecece;
+}
+.star-rating {
+    line-height:32px;
+    font-size:1.25em;
+}
+  
+.star-rating .fa-star{
+    color: red;
+}
+.star-rating .fa-star-o{
+    color: gray;
+}
+.rating-product{
+    color : red;
+}
+
+/*Styling for errors on form*/
+.form_error span {
+    width: 80%;
+    height: 35px;
+    margin: 3px 10%;
+    font-size: 1.1em;
+    color: #D83D5A;
+  }
+  .form_error input {
+    border: 1px solid #D83D5A;
+  }
+  
+  /*Styling in case no errors on form*/
+  .form_success span {
+    width: 80%;
+    height: 35px;
+    margin: 3px 10%;
+    font-size: 1.1em;
+    color: green;
+  }
+  .form_success input {
+    border: 1px solid green;
+  }
+  #error_msg {
+    color: red;
+    text-align: center;
+    margin: 10px auto;
+  }
+  .ui-autocomplete-loading {
+    background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+  }
+  .outline-danger:hover{
+      border: 3px solid #D83D5A;
+  }
+  .searchBar{
+    position:absolute;
+    top: 0px;
+  }
+
+  #sub_navlist {
+    position: absolute;
+    width: auto;
+    text-align: left;
+    z-index: 100;
+  }
+  #sub_navlist li {
+    padding: 5px 0;
+  }
+

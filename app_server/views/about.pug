@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .row.banner
+    .col-xs-12.col-sm-12.col-md-12.col-lg-12
+      img.img-responsive.about-banner(src='/images/banners/about-banner.png' , alt='CompanyBanner')
+  .container.about-us   
+    h2 About Us
+    //add website related description content here.
+    p We are a professional website design firm dedicated to professional service, quality web design, and trustworthy results. With careful audience targeting, we create highlt functional user interfaces with the perfect mixture of simplicity, elegance and innovation for each of our clients.
+  .team
+    .container
+      h3 Meet Our Team
+      .row
+        each member in team
+          .col-xs-12.col-sm-6.col-md-3.col-lg-3
+            .card
+              img(src=member.imgSrc, alt='John', style='width:100%')
+              h1= member.name
+              p.title= member.position
+              p= member.university 
+              p.pCardButton
+                a.pCardLink(href= member.twLink)
+                  i.fab.fa-twitter
+                a.pCardLink(href= member.lkLink)
+                  i.fab.fa-linkedin
+                a.pCardLink(href=member.fbLink)
+                  i.fab.fa-facebook
+                a.pCardLink(href=member.gitLink)
+                  i.fab.fa-github

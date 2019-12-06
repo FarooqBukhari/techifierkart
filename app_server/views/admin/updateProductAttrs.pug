@@ -1,0 +1,36 @@
+extends ../adminLayout.pug
+block content
+  .row.profile
+    include ../partials/adminSidebar.pug
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6
+      h1 Update Product
+      if(hasErrors)
+        .alert.alert-danger
+          each message in messages
+            p= message
+      form(action="/admin/updateProduct/"+product._id, method="post")
+        .form-group
+          label(for="title") Product Name
+          input.form-control(type="text", id="title", name="title" , value= product.title)
+        .form-group
+          label(for="description") Description
+          input.form-control(type="textarea", id="description", name="description", value= product.description)
+        .form-group
+          label(for="price") Price
+          input.form-control(type="text", id="price", name="price", value= product.price)
+        .form-group
+          label(for="rating") Rating
+          input.form-control(type="text", id="rating", name="rating", value= product.rating)
+        .form-group
+          label(for="category") Category
+          input.form-control(type="text", id="category", name="category", value= product.category)
+        .form-group
+          label(for="imgPath") Image Path
+          input.form-control(type="text", id="imgPath", name="imgPath", value= product.imagePath)
+        .form-group
+          label(for="quantity") Quantity
+          input.form-control(type="text", id="quantity", name="quantity", value= product.quantity)
+        .form-group
+          label(for="specs") Specifications
+          textarea.form-control(id="specs", name="specs")= product.specs
+        button.btn.btn-danger.btn-xs(type="submit") Update Product

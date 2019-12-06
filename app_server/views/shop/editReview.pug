@@ -1,0 +1,28 @@
+extends ../layout
+block content
+  .container.product-container
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        div
+          h3 Edit Your Review
+          p.text-danger= review.author
+          small.writeReview
+            form(action='/product/'+product._id+'/review/edit/'+review._id, method='post',id="review-form")
+              .form-group
+                label(for="productReview") What do you think of our product?
+                textarea.form-control(id="productReview", name="productReview", placeholder='Great Product', required)= review.reviewText
+              .form-group
+                .row
+                  .col-lg-12
+                    .star-rating
+                      .far.fa-star(data-rating="1")
+                      .far.fa-star(data-rating="2")
+                      .far.fa-star(data-rating="3")
+                      .far.fa-star(data-rating="4")
+                      .far.fa-star(data-rating="5")
+                      input(type="hidden",name="starRating",id="starRating",class="rating-value",value= review.rating)
+              input(type="hidden",name="_csrf",value= csrfToken)
+              button.btn.btn-danger.btn-xs(type="submit")
+                | Edit Review 
+                i.fab.fa-rocketchat
+  script(src="/js/ReviewView.js")

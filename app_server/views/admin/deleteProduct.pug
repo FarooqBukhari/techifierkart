@@ -1,0 +1,20 @@
+extends ../adminLayout.pug
+block content
+  .row.profile
+    include ../partials/adminSidebar.pug
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6
+      h1 Delete Product
+      block Products
+      each chunk in products
+        .row
+          each product in chunk
+            .col-xs-12.col-sm-6.col-md-3.col-lg-3
+              .img-thumbnail
+                img.img-responsive(src= product.imagePath , alt='')
+                .caption
+                  h3= product.title
+                  p.description= product.description
+                  .clearfix
+                    .price.float-left= product.price
+                    | $  
+                    a.btn.btn-danger.btn-xs.float-right(href='/admin/deleteProduct/'+product._id, role='button') Delete

@@ -1,0 +1,91 @@
+extends ../layout
+include ../_includes/sharedHTMLfunctions
+
+block content
+  .container.product-container
+    .row
+      .col-xs-4.col-sm-4.col-md-4.col-lg-4.item-photo.float-left
+        img(style='max-width:100%;', src=product.imagePath)
+      .col-xs-8.col-sm-8.col-md-8.col-lg-8.float-right(style='border:0px solid gray')
+        h3= product.title
+        h6.title-price
+          small PRICE OFFERED:
+        h3(style='margin-top:0px;')= "US " + product.price 
+          |$ 
+        .section(style='padding-bottom:20px;')
+          h6.title-attr
+            small Quantity Available
+          div
+            p(style='color:red;')= product.quantity
+        .section(style='padding-bottom:20px;')
+          a.btn.btn-danger.btn-xs.float-right(href='/add-to-cart/'+product._id, role='button')
+            | Add to Cart 
+            i.fas.fa-cart-plus
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        ul.menu-items
+          li.active.menu-items-li.attr1 
+            strong Details
+          li.menu-items-li.attr2 
+            strong Specifications
+          li.menu-items-li.attr3 
+            strong Reviews
+          li.menu-items-li.attr4
+            strong Write Reviews
+        hr(style='border-top:1px solid silver')
+        div
+          p.description(style='padding:15px;')
+            small= product.description
+          small.specs
+            ul
+              if(haveSpecs == 0)
+                li.product-description= "No Special Specifications, refer to product Description."
+              else
+                each spec in specs
+                  li.product-description= spec
+          small.reviews
+            ul
+              if(haveReviews == 0)
+                li.product-reviews= "Nobody Rated this product yet."
+              else
+                each review in reviews
+                  li.product-reviews
+                    .pReviews
+                    .row.blockquote.review-item
+                        .col-md-3.text-center
+                          img.rounded-circle.reviewer(src="http://standaloneinstaller.com/upload/avatar.png")
+                          .caption
+                            small 
+                              | by 
+                              p= review.author 
+                          +outputRating(review.rating)
+                        .col-md-9
+                          h4 Review
+                          .ratebox.text-center(data-id="0" data-rating=review.rating)
+                          p.review-text= review.reviewText
+                          if login && req.user._id == review.authorId
+                            a.btn.btn-danger.btn-xs.float-right(href='/product/'+product._id+'/review/edit/'+review._id, role='button')
+                              i.fas.fa-user-edit
+                            a.btn.btn-danger.btn-xs.float-right(href='/product/'+product._id+'/review/delete/'+review._id, role='button')
+                              i.fas.fa-trash-alt
+                          small.review-date= review.createdOn
+          small.writeReview
+            form(action='/product/view/'+product._id+'/review', method='post',id="review-form")
+              .form-group
+                label(for="productReview") What do you think of our product?
+                textarea.form-control(id="productReview", name="productReview", placeholder='Great Product', required)
+              .form-group
+                .row
+                  .col-lg-12
+                    .star-rating
+                      .far.fa-star(data-rating="1")
+                      .far.fa-star(data-rating="2")
+                      .far.fa-star(data-rating="3")
+                      .far.fa-star(data-rating="4")
+                      .far.fa-star(data-rating="5")
+                      input(type="hidden",name="starRating",id="starRating",class="rating-value",value= product.rating)
+              input(type="hidden",name="_csrf",value= csrfToken)
+              button.btn.btn-danger.btn-xs(type="submit")
+                | Write Review 
+                i.fab.fa-rocketchat
+              
+  script(src="/js/singleProductView.js")

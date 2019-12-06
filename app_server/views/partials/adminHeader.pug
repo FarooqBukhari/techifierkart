@@ -1,0 +1,22 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  a.navbar-brand(href='/') TechifierKart
+  button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  .collapse.navbar-collapse#navbarSupportedContent
+    ul.nav.navbar-nav.navbar-right.mr-auto
+      li.nav-item.active
+        a.nav-link(href='/')
+          i.fas.fa-home|  Home
+          span.sr-only (current)
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle#navbarDropdown(href='/profile', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          i.fas.fa-user|  User Management
+        .dropdown-menu(aria-labelledby='navbarDropdown')
+          if login
+              a.dropdown-item(href='/admin/panel') Panel
+              .dropdown-divider
+              a.dropdown-item(href='/admin/logout') logout
+          else
+              a.dropdown-item(href='/user/signup') Sign Up
+              .dropdown-divider
+              a.dropdown-item(href='/user/signin') Sign In

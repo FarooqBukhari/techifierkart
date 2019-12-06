@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  head
+    title TechifierKart - A Computer Parts Store
+    // for-mobile-apps 
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet', type='text/css', media='all')
+    link(href='/stylesheets/style.css', rel='stylesheet', type='text/css', media='all')
+    link(href='/favicon.png', rel='icon')
+    script(src='/js/jquery.min.js')
+    link(href="https://fonts.googleapis.com/css?family=Montserrat", rel="stylesheet") 
+    link(href="https://use.fontawesome.com/releases/v5.4.1/css/all.css", rel="stylesheet", integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz", crossorigin="anonymous")
+  body
+    script(type='text/javascript', src='/js/bootstrap.min.js')
+    include partials/adminHeader.pug
+    block content
+    include partials/footer.pug

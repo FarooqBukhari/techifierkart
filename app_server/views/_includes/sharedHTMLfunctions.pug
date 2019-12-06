@@ -1,0 +1,5 @@
+mixin outputRating(rating)
+  -  for (var i = 1; i <= rating; i++)
+     i.fas.fa-star.rating-product
+  -  for (var i = rating; i < 5; i++)
+     i.far.fa-star.rating-product

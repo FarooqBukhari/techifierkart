@@ -1,0 +1,35 @@
+extends ../layout.pug
+block content
+    .container
+      if products.length > 0
+        .row 
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            ul.list-group
+              each product in products
+                li.list-group-item
+                  span.badge.badge-danger.float-right.cartBadge= product.qty 
+                  |  
+                  strong=  product.item.title  
+                  |  
+                  span.label.label-danger= product.price 
+                  | $
+                  .btn-group.float-right
+                    a.btn.btn-danger.cartBtn.cartLink(href='/reduce/'+product.item._id) Reduce by 1 
+                    a.btn.btn-danger.cartBtn.cartLink(href='/remove/'+product.item._id) Remove all
+        .row 
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            strong Total: 
+            strong=  totalPrice 
+            strong $
+        br
+        .row 
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            a.btn.btn-danger.checkoutLink(href='/checkout/', role="button") Checkout
+      else
+        .row 
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          h2 No Items in Cart
+      
+      
+
+                  

@@ -1,0 +1,28 @@
+extends ../layout
+include ../_includes/sharedHTMLfunctions
+  
+block content
+  .container(ng-controller="productInjection")
+    h1 Categories
+    .categoryContainer
+      a.btn.btn-danger.btn-xs(href='#', role='button',ng-click='getProducts("GamingPeriphirels")') Gaming Periphirels
+      a.btn.btn-danger.btn-xs(href='#', role='button',ng-click='getProducts("Processors&MotherBoards")') Processors & MotherBoards
+      a.btn.btn-danger.btn-xs(href='#', role='button',ng-click='getProducts("GraphicCards")') Graphic Cards
+      a.btn.btn-danger.btn-xs(href='#', role='button',ng-click='getProducts("StorageDevices")') Storage Devices
+      a.btn.btn-danger.btn-xs(href='#', role='button',ng-click='getProducts("MemorySticks")') Memory Sticks
+      a.btn.btn-danger.btn-xs(href='#', role='button',ng-click='getProducts("CoolingAccessories")') Cooling Accessories
+      a.btn.btn-danger.btn-xs(href='#', role='button',ng-click='getProducts("PowerSupplies")') Power Supplies
+    block Products
+      .row(ng-repeat="chunk in products")
+        .col-xs-12.col-sm-6.col-md-3.col-lg-3(ng-repeat="product in chunk")
+          .img-thumbnail
+            img.img-responsive(src= "{{product.imagePath}}" , alt='')
+            .caption
+              h4 {{product.title}}
+              .clearfix
+                .price.float-left {{product.price}}
+                  | $  
+                a.btn.btn-danger.btn-xs.float-right(href='/add-to-cart/{{product._id}}', role='button')
+                  i.fas.fa-cart-plus
+                a.btn.btn-danger.btn-xs.float-right(href='/product/view/{{product._id}}', role='button')
+                  i.far.fa-eye

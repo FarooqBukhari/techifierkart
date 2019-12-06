@@ -1,0 +1,22 @@
+extends ../adminLayout.pug
+block content
+  .row.profile
+    include ../partials/adminSidebar.pug
+    .col-xs-8.col-sm-6.col-md-10.col-lg-10
+      h1 Admin Panel
+      h2 My Orders
+      .row
+        for order in orders
+          .col-xs-2.col-sm-2.col-md-2.col-lg-2 
+            .card.text-white.bg-dark
+              .card-body
+                ul.list-group
+                  for item in order.items
+                    li.list-group-item.list-group-item-secondary
+                      span.badge.badge-danger.float-right.align-middle= item.price
+                      p.align-middle(style="font-weight: 600")= item.item.title+ "    |     "
+                        small.align-middle(style="font-weight: 600")=  item.qty 
+                          | Units  
+              .card-footer
+                i.fas.fa-money-check-alt.text-danger  
+                strong= " Total Price:  $"+ order.cart.totalPrice

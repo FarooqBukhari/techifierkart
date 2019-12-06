@@ -1,0 +1,26 @@
+.col-xs-4.col-sm-3.col-md-2.col-lg-2
+  // SIDEBAR MENU 
+  .sidenav.bg-dark
+    // SIDEBAR USERPIC 
+    .profile-userpic
+      img.img-responsive(src='/images/users/adminDefault.png', alt='')
+    // END SIDEBAR USERPIC  
+    .profile-usertitle
+      .profile-usertitle-name
+        p= currentUser.fname + ' ' + currentUser.lname
+      .profile-usertitle-job
+        p= currentUser.designation
+    a(href="/admin/panel") Your Purchases
+    button.dropdown-btn Products
+      i.fa.fa-caret-down
+    .dropdown-container
+      h6.dropdown-header Product Operation
+      a(href="/admin/addProduct") Add
+      a(href="/admin/deleteProduct") Delete 
+      a(href="/admin/updateProduct") Update
+script(src='/js/sidebar.js')
+                    
+                
+    
+
+    // END MENU 

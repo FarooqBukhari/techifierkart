@@ -1,0 +1,51 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  a.navbar-brand(href='/') TechifierKart
+  button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  .collapse.navbar-collapse#navbarSupportedContent
+    ul.nav.navbar-nav.navbar-right.mr-auto
+      li.nav-item.active
+        a.nav-link(href='/')
+          i.fas.fa-home|  Home
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link#navbarDropdown(href='/categories') 
+          i.fa.fa-list-alt|  Categories
+      li.nav-item
+        a.nav-link(href='/about')
+          i.fas.fa-users|  About Us
+      li.nav-item
+        a.nav-link(href='/shopping-cart')
+          i.fas.fa-shopping-cart|  Shopping Cart
+          | 
+          if session.cart != undefined
+            span.badge.badge-secondary=  session.cart.totalQty
+          else
+            span.badge.badge-secondary= 0
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle#navbarDropdown(href='/profile', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          i.fas.fa-user|  User Management
+        .dropdown-menu(aria-labelledby='navbarDropdown')
+          if !adminLogin
+            if login
+              a.dropdown-item(href='/user/profile') Profile
+              .dropdown-divider
+              a.dropdown-item(href='/user/logout') logout
+            else
+              a.dropdown-item(href='/user/signup') Sign Up
+              .dropdown-divider
+              a.dropdown-item(href='/user/signin') Sign In
+          else
+              a.dropdown-item(href='/user/signup') Sign Up
+              .dropdown-divider
+              a.dropdown-item(href='/user/signin') Sign In
+  .searchBar(ng-controller="autocomplete",style="position: relative")
+    input.outline-danger(type="text",id="searchProds",name="searchProds",placeholder="Search",ng-model="searchProds", ng-keyup="complete(searchProds)") 
+    ul.list-group.searchResults(ng-model="hideinfo",ng-hide="hideinfo",id="sub_navlist")
+      li.list-group-item(ng-repeat="productinfo in search_product", ng-click="choose_textbox(productinfo.title)")
+        a(href='/product/view/{{productinfo._id}}', role='button', class="text-danger") {{productinfo.title}}
+
+script(src="/js/searchResults.js")
+script(src="/js/searchBarstyling.js")
+        
+    

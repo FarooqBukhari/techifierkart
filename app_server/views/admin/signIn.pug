@@ -1,0 +1,19 @@
+extends ../layout.pug
+block content
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        h1 Admin Sign In
+        if(hasErrors)
+          .alert.alert-danger
+            each message in messages
+              p= message
+        form(action="/admin/",method="post")
+          .form-group
+            label(for="email") Email
+            input.form-control(type="text", id="email", name="email")
+          .form-group
+            label(for="password") Password
+            input.form-control(type="password", id="password", name="password")
+          input(type="hidden",name="_csrf",value= csrfToken)
+          button.btn.btn-danger.btn-xs(type="submit") Log In

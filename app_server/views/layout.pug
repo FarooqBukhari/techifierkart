@@ -1,0 +1,21 @@
+doctype html
+html(lang='en', ng-app="techifierKart")
+  head
+    title TechifierKart - A Computer Parts Store
+    // for-mobile-apps 
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet', type='text/css', media='all')
+    link(href='/stylesheets/style.css', rel='stylesheet', type='text/css', media='all')
+    link(href='/favicon.png', rel='icon')
+    link(rel="stylesheet", href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(href="https://fonts.googleapis.com/css?family=Montserrat", rel="stylesheet")
+    link(href="https://use.fontawesome.com/releases/v5.4.1/css/all.css", rel="stylesheet", integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz", crossorigin="anonymous")
+    script(src='/js/jquery.min.js')
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+  body
+    script(type='text/javascript', src='/js/bootstrap.min.js')
+    script(src ="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js")
+    include partials/header.pug
+    block content
+    include partials/footer.pug
